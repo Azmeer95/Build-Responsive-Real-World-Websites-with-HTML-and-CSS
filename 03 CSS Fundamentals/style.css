@@ -1,0 +1,267 @@
+/* Universal Selector - gets applied to all elements in the page. NO inheritance involved */
+/* Global reset - the very first thing to do */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* PAGE SECTIONS */
+/* Children of body inherits text related properties(overriden in most cases), but not other properties */
+body {
+  font-family: sans-serif;
+  color: #444;
+  border-top: 10px solid #1098ad;
+  position: relative;
+}
+
+.container {
+  width: 800px;
+  /* Margin in the left and right should be the same and calculated by the browser - centering the content of the body */
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+/* bigger boxes with multiple child elements is best to have at the top */
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  /* best to use margin bottom */
+  margin-bottom: 60px;
+  /* height: 80px; */
+}
+
+nav {
+  font-size: 18px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+  /* position: relative; */
+}
+
+aside {
+  background-color: #f7f7f7;
+  /* border short-hand property */
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+  width: 500px;
+}
+
+/* SMALLER ELEMENTS */
+/* Combine selectors to form a list, to apply same styling to multiple elements at one go */
+/* h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+} */
+
+h1,
+h2,
+h3 {
+  /* This definition overrides the previous style */
+  color: #1098ad;
+}
+
+h1 {
+  /* font size of an element is 16px by default */
+  font-size: 26px;
+  /* Do not use local font family, as it may not be available to others */
+
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  /* background-color: orange; */
+  position: relative;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  /* Here, collapsing margin phenomena will occur as p already has a margin bottom of 15px set. The larger of the two values will set as the margin.  */
+  margin-top: 40px;
+}
+
+h4 {
+  font-size: 20px;
+
+  text-transform: uppercase;
+  /* h4 gets centered in it's parent element (which is the whole page in this case) */
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  /* Line height will be 1.5 times the font size */
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+/* Because of 'inheritance', the strong and em elements also received the same styling as p */
+
+/* Global reset had removed all spaces, hence there was no spave to show the points/bullets */
+ul,
+ol {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* The following selector types encodes HTML structure, which is not good */
+/* Descendant selector - this p is the child of footer */
+/* footer p {
+  font-size: 16px;
+} */
+
+/* Nested descendant selector */
+/* article header p {
+  font-style: italic;
+} */
+
+/* ID selector */
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+#copyright {
+  font-size: 16px;
+}
+
+/* Class selector */
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+/* pseudo class - selects only the first child of parent container, perfect for situations where all the child elements are the same, for e.g. li in ul/ol */
+li:first-child {
+  font-weight: bold;
+}
+
+/* This won't work */
+article p:first-child {
+  color: red;
+}
+
+li:last-child {
+  font-style: italic;
+}
+
+/* selects a specific child - n = 1,2... / odd, even, 2n, 4n+1, etc */
+/* li:nth-child(odd) {
+  color: red;
+} */
+
+/* The following four states should be defined in the following order */
+/* Targets all a tags with href attributes */
+a:link {
+  color: #1098ad;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #1098ad;
+}
+
+a:hover {
+  text-decoration: underline dotted orangered;
+}
+
+/* During the duration of the click */
+a:active {
+  font-style: italic;
+}
+
+.post-img {
+  /* % of the parent container - here, the entire width of the page */
+  width: 100%;
+  /* Sets the aspect ratio to original - if height is already specified in the HTML. If not specified, will account for automatically */
+  height: auto;
+}
+
+nav a:link {
+  display: inline-block;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+/* chaining pseudo classes */
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  /* Positioned in relation to the view port. But we want to position it relative to it's parent(page/body) */
+  /* top: 0;
+  left: 0; */
+  bottom: 50px;
+  right: 50px;
+}
+
+/* Pseudo element */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
+/* All paragraphs after h3 (adjacent sibling selector) */
+h3 + p::first-line {
+  color: #1098ad;
+}
+
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+/* User agent stylesheet - default styling applied to elements, found in Dev Tool */
+/* All rules are applied to same element. However, to resolve conflicting selectors/declarations, priorities are set */
+/* Keep selectors simple. Avoid too much nesting */
+/* Inherited values have the lowest priority, as they get overriden */
+/* Mostly properties related to text are inherited */
+
+/* The Box Model defines how an element is displayed on a webpage and how they are sized */
+/* Content + Padding + Border -> visible part of the element in the page, while margin is outside */
+/* Fill area (the entire visible part of the element) - occupied by bg-img/color */
+
+/* For bg color/border - use padding. To add space around elements, use margin */
+
+/* Boxes that occupy exactly the space they need for it's content - inline elements */
+/* Boxes that occupy the whole width and create line breaks, and cannot be side by side - block level elements */
+
+/* Pseudo elements - that don't exist in the html, but still can be selected and styled in the CSS, e.g. first letter/first line in the paragraph */

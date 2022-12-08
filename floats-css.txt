@@ -1,0 +1,53 @@
+/* FLOATS  */
+
+.author-img {
+  /* The img is taken out of it's position (all elements will float around it - a lot like position absolute) */
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+/* Collapsing Elements - The height of main-header component has reduced to 0 because it's children have been floated - as if they don't exist in the page. The remaining height is due to the padding provided earlier.
+  */
+
+/* Clear both left and right floats */
+/* .clear {
+  clear: both;
+} */
+
+/* Clearfix - creates a new element(last child) of the container - here, the empty div in the header */
+.clearfix::after {
+  clear: both;
+  /* pseudo element only appears for the content property */
+  content: "";
+  /* clearing floats work only on block level elements */
+  display: block;
+}
+
+article {
+  width: 825px;
+  float: left;
+}
+
+aside {
+  width: 300px;
+  float: right;
+}
+
+footer {
+  /* Empty div/clear fix is not needed as footer is the element where we want to clear the float. We don't wamt the footer to float around */
+  clear: both;
+}

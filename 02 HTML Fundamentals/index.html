@@ -1,0 +1,162 @@
+<!-- Tells the browser that this file uses HTML, and will use HTML5 specification to render this page -->
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Stuffs here will not be visible in the browser window -->
+  <head>
+    <!-- Data about data -->
+    <!-- Use simple characters used in the English language -->
+    <meta charset="UTF-8" />
+    <title>The Basic Language of the web: HTML</title>
+  </head>
+
+  <!-- Stuffs here will be visible in the browser window -->
+  <body>
+    <!-- Top part of a web document/smaller unit -->
+    <header>
+      <!-- Headings break big blocks of text into logical sections and adds a title to each of these sections -->
+      <!-- A webpage must have ONE h1 (primary heading) -->
+      <h1>📘 The Code Magazine</h1>
+
+      <nav>
+        <a href="blog.html">Blog</a>
+        <a href="#">Challenges</a>
+        <a href="#">Flexbox</a>
+        <a href="#">CSS Grid</a>
+      </nav>
+    </header>
+
+    <!-- Main part/blog section of the page (any real life object such as pen, PC, can be represented using article tag in HTML) -->
+    <article>
+      <header>
+        <h2>The Basic Language of the Web: HTML</h2>
+
+        <img
+          src="img/laura-jones.jpg"
+          alt="Headshot of Laura Jones"
+          width="50"
+          height="50"
+        />
+
+        <p>Posted by <strong>Laura Jones</strong> on Monday, June 21st 2027</p>
+
+        <!-- Attributes are pieces of data to describe elements -->
+        <img
+          src="img/post-img.jpg"
+          alt="HTML code on a screen"
+          width="500"
+          height="200"
+        />
+      </header>
+
+      <p>
+        All modern websites and web applications are built using three
+        <em>fundamental</em>
+        technologies: HTML, CSS and JavaScript. These are the languages of the
+        web.
+      </p>
+
+      <p>
+        In this post, let's focus on HTML. We will learn what HTML is all about,
+        and why you too should learn it.
+      </p>
+
+      <h3>What is HTML?</h3>
+      <p>
+        HTML stands for <strong>H</strong>yper<strong>T</strong>ext
+        <strong>M</strong>arkup <strong>L</strong>anguage. It's a markup
+        language that web developers use to structure and describe the content
+        of a webpage (not a programming language).
+      </p>
+
+      <p>
+        HTML consists of elements that describe different types of content:
+        paragraphs, links, headings, images, video, etc. Web browsers understand
+        HTML and render HTML code as websites.
+      </p>
+
+      <p>In HTML, each element is made up of 3 parts:</p>
+
+      <ol>
+        <li>The opening tag</li>
+        <li>The closing tag</li>
+        <li>The actual element</li>
+      </ol>
+
+      <p>
+        ou can learn more at the
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank"
+          >MDN Web Docs</a
+        >.
+      </p>
+
+      <h3>Why should you learn HTML?</h3>
+      <p>
+        There are countless reasons for learning the fundamental language of the
+        web. Here are 5 of them:
+      </p>
+
+      <ul>
+        <li>To be able to use the fundamental web dev language</li>
+        <li>
+          To hand-craft beautiful websites instead of relying on tools like
+          Worpress or Wix
+        </li>
+        <li>To build web applications</li>
+        <li>To impress friends</li>
+        <li>To have fun 😃</li>
+      </ul>
+
+      <p>Hopefully you learned something new here. See you next time!</p>
+    </article>
+
+    <!-- Used for some secondary information that compliments the main section (not necessary that it has to be a sidebar visually) -->
+    <aside>
+      <h4>Related Posts</h4>
+      <ul>
+        <li>
+          <img
+            src="img/related-1.jpg"
+            alt="Person programming"
+            width="75"
+            height="75"
+          />
+          <a href="#">How to Learn Web Development</a>
+          <p>By Jonas Schmedtmann</p>
+        </li>
+        <li>
+          <img src="img/related-2.jpg" alt="Lightning" width="75" height="75" />
+          <a href="#">The Unknown Powers of CSS</a>
+          <p>By Jim Dillon</p>
+        </li>
+        <li>
+          <img
+            src="img/related-3.jpg"
+            alt="JavaScript code on a screen"
+            width="75"
+            height="75"
+          />
+          <a href="#">Why JavaScript is Awesome</a>
+          <p>By Matilda</p>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Semantic elements have a certain meaning/purpose attached to them(consider what it means, not how it looks in the page) -->
+    <footer>
+      <!-- The copyright symbol is an HTML entity -->
+      Copyright &copy; 2027 by The Code Magazine.
+    </footer>
+  </body>
+</html>
+
+<!-- 
+     Why use semantic tags:
+     - Search engine optimization - search engines will be able to better understand the structure of the web page content, and can analyze the web page better   
+     - Important for accessibility and especially for people who rely on screen readers 
+
+     Understanding the URL:
+     127.0.0.1: Local host server(a web server running on my computer)
+     5500: A sub-address of the web server, where the code is running
+-->
